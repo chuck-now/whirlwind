@@ -1,0 +1,16 @@
+﻿---
+Name:  'service.ayo'
+
+Storage:
+  MongoServers:
+    - 'localhost:27017'
+  MongoConnectionMode:
+  MongoDbName:  'ayo'
+  MongoUsername:  'root'
+  MongoPassword:  '123456'
+
+Upload:
+   QiNIuAccessKey: 'V1XuSFGiJPeup_MYc2oA2CaJkt0ZhkWvAmFD1nlF'
+   QiNIuSecretKey: 'UMvaiC7Izo3AAXYjnpF8aFYfx4sHDtOpRaC761Rp'
+   QiNIuScope: 'dukesimage'
+   QiNIuOutUrl: 'http://img.dukesimage.cn'

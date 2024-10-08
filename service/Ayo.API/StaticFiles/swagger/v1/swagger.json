@@ -1,0 +1,23 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "service.ayo：AyoAPI【智能采集系统-哎呦】",
+    "description": "智能采集系统实战",
+    "version": "v1"
+  },
+  "paths": {
+    "/swagger-gen": {
+      "get": {
+        "tags": [
+          "Home"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}

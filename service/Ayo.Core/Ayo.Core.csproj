@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>..\Ayo.API\Ayo.Core.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Events\**" />
+    <EmbeddedResource Remove="Events\**" />
+    <None Remove="Events\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="log4net" Version="3.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="8.0.2" />
+    <PackageReference Include="Qiniu" Version="8.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\src\BaseLib.AutoMapper\BaseLib.AutoMapper.csproj" />
+    <ProjectReference Include="..\src\BaseLib.MongoDB\BaseLib.MongoDb.csproj" />
+    <ProjectReference Include="..\src\BaseLib\BaseLib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Domain\Collect\" />
+    <Folder Include="Domain\Repositories\Collect\" />
+  </ItemGroup>
+</Project>
