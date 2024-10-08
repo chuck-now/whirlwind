@@ -6,6 +6,36 @@
     "version": "v1"
   },
   "paths": {
+    "/ayo.admin.collect.robot.getall": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "获取所有机器人",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RobotDtoListBaseLibResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RobotDtoListBaseLibResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RobotDtoListBaseLibResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/swagger-gen": {
       "get": {
         "tags": [
@@ -19,5 +49,102 @@
       }
     }
   },
-  "components": { }
+  "components": {
+    "schemas": {
+      "RobotDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "机器人Id",
+            "nullable": true
+          },
+          "code": {
+            "type": "string",
+            "description": "机器人代码",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "机器人名称",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "机器人描述",
+            "nullable": true
+          },
+          "avatar": {
+            "type": "string",
+            "description": "头像",
+            "nullable": true
+          },
+          "isEnable": {
+            "type": "string",
+            "description": "是否启用【Y | N】\r\nAyo.Core.GlobalConsts.KnowSwitch",
+            "nullable": true
+          },
+          "taskCount": {
+            "type": "integer",
+            "description": "任务数量",
+            "format": "int32"
+          },
+          "operatorType": {
+            "type": "string",
+            "description": "操作类型【create | update | delete】\r\nAyo.Core.GlobalConsts.KnowOperatorType",
+            "nullable": true
+          },
+          "operatorId": {
+            "type": "string",
+            "description": "操作人标识",
+            "nullable": true
+          },
+          "operatorName": {
+            "type": "string",
+            "description": "操作人",
+            "nullable": true
+          },
+          "operatorAt": {
+            "type": "string",
+            "description": "操作时间",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RobotDtoListBaseLibResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "fullMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestapm": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "result": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RobotDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
 }

@@ -27,7 +27,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Domain\Collect\" />
-    <Folder Include="Domain\Repositories\Collect\" />
+    <Folder Include="Dto\Collect\Admin\" />
   </ItemGroup>
 </Project>

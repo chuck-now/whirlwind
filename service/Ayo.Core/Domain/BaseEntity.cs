@@ -1,21 +1,21 @@
 ﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
 using System;
 using BaseLib.Domain.Entities;
-using BaseLib.Domain.Entities.Auditing;
+using static Ayo.Core.GlobalConsts;
 
 namespace Ayo.Core.Domain
 {
     /// <summary>
     /// 实体类父类
     /// </summary>
-    [BsonIgnoreExtraElements]
-    public abstract class BaseEntity : IEntity<ObjectId>, ISoftDelete, IHasDeletionTime
+    public abstract class BaseEntity : IEntity<ObjectId>
     {
         public BaseEntity()
         {
-            CreatedAt = DateTime.Now;
-            UpdatedAt = DateTime.Now;
+            OperatorType = KnowOperatorType.CREATE;
+            OperatorId = "";
+            OperatorName = "";
+            OperatorAt = DateTime.Now;
         }
 
         /// <summary>
@@ -24,24 +24,25 @@ namespace Ayo.Core.Domain
         public ObjectId Id { get; set; }
 
         /// <summary>
-        /// 创建时间
+        /// 操作类型【create | update | delete】
+        /// <see cref="KnowOperatorType"/>
         /// </summary>
-        public DateTime CreatedAt { get; set; }
+        public string OperatorType { get; set; }
 
         /// <summary>
-        /// 修改时间
+        /// 操作人标识
         /// </summary>
-        public DateTime UpdatedAt { get; set; }
+        public string OperatorId { get; set; }
 
         /// <summary>
-        /// 是否删除
+        /// 操作人
         /// </summary>
-        public bool IsDeleted { get; set; }
+        public string OperatorName { get; set; }
 
         /// <summary>
-        /// 删除时间
+        /// 操作时间
         /// </summary>
-        public DateTime? DeletionTime { get; set; }
+        public DateTime OperatorAt { get; set; }
 
         /// <summary>
         /// </summary>

@@ -6,34 +6,40 @@
     public static class GlobalConsts
     {
         /// <summary>
-        /// 任务状态
+        /// 表示 开/关 或 是/否
         /// </summary>
-        public static class JobType
+        public static class KnowSwitch
         {
             /// <summary>
-            /// 未运行
+            /// 开启
             /// </summary>
-            public const int UnRuning = 0;
+            public const string Y = "Y";
 
             /// <summary>
-            /// 等待中
+            /// 关闭
             /// </summary>
-            public const int Waiting = 50000;
+            public const string N = "N";
+        }
+
+        /// <summary>
+        /// 操作人类型
+        /// </summary>
+        public static class KnowOperatorType
+        {
+            /// <summary>
+            ///  创建
+            /// </summary>
+            public const string CREATE = "create";
 
             /// <summary>
-            /// 运行中
+            /// 修改
             /// </summary>
-            public const int Runing = 10000;
+            public const string UPDATE = "update";
 
             /// <summary>
-            /// 已停止
+            /// 删除
             /// </summary>
-            public const int Stopped = 10000;
-
-            /// <summary>
-            /// 已完成
-            /// </summary>
-            public const int Completed = 10000;
+            public const string DELETE = "delete";
         }
     }
 }

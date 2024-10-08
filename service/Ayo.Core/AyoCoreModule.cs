@@ -37,8 +37,7 @@ namespace Ayo.Core
                 u.AutoMap();
 
                 u.MapIdMember(x => x.Id).SetIdGenerator(ObjectIdGenerator.Instance);
-                u.MapProperty(x => x.CreatedAt).SetSerializer(new DateTimeSerializer(DateTimeKind.Local));
-                u.MapProperty(x => x.UpdatedAt).SetSerializer(new DateTimeSerializer(DateTimeKind.Local));
+                u.MapProperty(x => x.OperatorAt).SetSerializer(new DateTimeSerializer(DateTimeKind.Local));
 
                 u.SetIgnoreExtraElements(true);
             });

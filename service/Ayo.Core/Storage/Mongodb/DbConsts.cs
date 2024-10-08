@@ -5,9 +5,9 @@
         public static class CollectionNames
         {
             /// <summary>
-            ///  采集任务
+            ///  机器人
             /// </summary>
-            public const string BEE_JOB = "bee_job";
+            public const string AYO_COLLECT_ROBOT = "ayo_collect_robot";
         }
     }
 }
