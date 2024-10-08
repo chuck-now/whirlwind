@@ -3,7 +3,7 @@ Name:  'service.ayo'
 
 Storage:
   MongoServers:
-    - 'localhost:27017'
+    - '47.116.35.162:27017'
   MongoConnectionMode:
   MongoDbName:  'ayo'
   MongoUsername:  'root'

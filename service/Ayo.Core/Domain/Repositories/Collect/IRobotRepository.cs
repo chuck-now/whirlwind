@@ -34,8 +34,9 @@ namespace Ayo.Core.Domain.Repositories.Collect
         /// <param name="Id"></param>
         /// <param name="operatorId"></param>
         /// <param name="operatorName"></param>
+        /// <param name="operatorType"></param>
         /// <returns></returns>
-        Task<long> UpdateOpInfo(ObjectId Id, string operatorId, string operatorName);
+        Task<long> UpdateOpInfo(ObjectId Id, string operatorId, string operatorName, string operatorType);
 
         /// <summary>
         /// 增加/减少机器人任务数量

@@ -5,7 +5,7 @@ namespace Ayo.Core.Dto
     /// <summary>
     /// 单个删除传入参数
     /// </summary>
-    public class DeleteInput
+    public class DeleteInput : OperatorInput
     {
         /// <summary>
         /// id

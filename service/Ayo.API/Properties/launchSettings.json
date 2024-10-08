@@ -2,13 +2,11 @@
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
-      "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "nativeDebugging": true
+      }
     },
-    "Ayo.API": {
+    " Ayo.API": {
       "commandName": "Project",
       "launchUrl": "swagger/index.html",
       "environmentVariables": {
@@ -21,7 +19,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:7894",
+      "applicationUrl": "http://localhost:5000",
       "sslPort": 0
     }
   }

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -24,9 +24,5 @@
     <ProjectReference Include="..\src\BaseLib.AutoMapper\BaseLib.AutoMapper.csproj" />
     <ProjectReference Include="..\src\BaseLib.MongoDB\BaseLib.MongoDb.csproj" />
     <ProjectReference Include="..\src\BaseLib\BaseLib.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Dto\Collect\Admin\" />
   </ItemGroup>
 </Project>

@@ -6,6 +6,46 @@
     "version": "v1"
   },
   "paths": {
+    "/ayo.admin.collect.robot.get": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "获取单个机器人详情",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RobotDtoBaseLibResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RobotDtoBaseLibResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RobotDtoBaseLibResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/ayo.admin.collect.robot.getall": {
       "post": {
         "tags": [
@@ -36,6 +76,226 @@
         }
       }
     },
+    "/ayo.admin.collect.robot.create": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "新增机器人",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRobotInput"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRobotInput"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRobotInput"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRobotInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringBaseLibResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringBaseLibResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringBaseLibResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ayo.admin.collect.robot.update": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "修改机器人",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRobotInput"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRobotInput"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRobotInput"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRobotInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLibResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLibResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLibResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ayo.admin.collect.robot.isenable.update": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "修改机器人是否启用",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRobotIsEnableInput"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRobotIsEnableInput"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRobotIsEnableInput"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRobotIsEnableInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLibResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLibResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLibResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ayo.admin.collect.robot.delete": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "删除机器人",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteInput"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteInput"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteInput"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLibResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLibResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLibResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/swagger-gen": {
       "get": {
         "tags": [
@@ -51,6 +311,97 @@
   },
   "components": {
     "schemas": {
+      "BaseLibResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "fullMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestapm": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateRobotInput": {
+        "required": [
+          "avatar",
+          "description",
+          "name",
+          "operatorId",
+          "operatorName"
+        ],
+        "type": "object",
+        "properties": {
+          "operatorId": {
+            "minLength": 1,
+            "type": "string",
+            "description": "操作人标识"
+          },
+          "operatorName": {
+            "minLength": 1,
+            "type": "string",
+            "description": "操作人"
+          },
+          "name": {
+            "minLength": 1,
+            "type": "string",
+            "description": "机器人名称"
+          },
+          "description": {
+            "minLength": 1,
+            "type": "string",
+            "description": "机器人描述"
+          },
+          "avatar": {
+            "minLength": 1,
+            "type": "string",
+            "description": "头像"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeleteInput": {
+        "required": [
+          "id",
+          "operatorId",
+          "operatorName"
+        ],
+        "type": "object",
+        "properties": {
+          "operatorId": {
+            "minLength": 1,
+            "type": "string",
+            "description": "操作人标识"
+          },
+          "operatorName": {
+            "minLength": 1,
+            "type": "string",
+            "description": "操作人"
+          },
+          "id": {
+            "minLength": 1,
+            "type": "string",
+            "description": "id"
+          }
+        },
+        "additionalProperties": false,
+        "description": "单个删除传入参数"
+      },
       "RobotDto": {
         "type": "object",
         "properties": {
@@ -112,6 +463,35 @@
         },
         "additionalProperties": false
       },
+      "RobotDtoBaseLibResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "fullMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestapm": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/RobotDto"
+          }
+        },
+        "additionalProperties": false
+      },
       "RobotDtoListBaseLibResponse": {
         "type": "object",
         "properties": {
@@ -141,6 +521,112 @@
               "$ref": "#/components/schemas/RobotDto"
             },
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "StringBaseLibResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "fullMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestapm": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "result": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateRobotInput": {
+        "required": [
+          "avatar",
+          "description",
+          "id",
+          "name",
+          "operatorId",
+          "operatorName"
+        ],
+        "type": "object",
+        "properties": {
+          "operatorId": {
+            "minLength": 1,
+            "type": "string",
+            "description": "操作人标识"
+          },
+          "operatorName": {
+            "minLength": 1,
+            "type": "string",
+            "description": "操作人"
+          },
+          "id": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Id"
+          },
+          "name": {
+            "minLength": 1,
+            "type": "string",
+            "description": "机器人名称"
+          },
+          "description": {
+            "minLength": 1,
+            "type": "string",
+            "description": "机器人描述"
+          },
+          "avatar": {
+            "minLength": 1,
+            "type": "string",
+            "description": "头像"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateRobotIsEnableInput": {
+        "required": [
+          "id",
+          "isEnable",
+          "operatorId",
+          "operatorName"
+        ],
+        "type": "object",
+        "properties": {
+          "operatorId": {
+            "minLength": 1,
+            "type": "string",
+            "description": "操作人标识"
+          },
+          "operatorName": {
+            "minLength": 1,
+            "type": "string",
+            "description": "操作人"
+          },
+          "id": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Id"
+          },
+          "isEnable": {
+            "minLength": 1,
+            "type": "string",
+            "description": "是否启用 【 Y | N 】"
           }
         },
         "additionalProperties": false

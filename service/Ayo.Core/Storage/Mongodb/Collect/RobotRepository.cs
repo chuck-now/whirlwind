@@ -46,11 +46,12 @@ namespace Ayo.Core.Storage.Mongodb.Collect
             return result.ModifiedCount;
         }
 
-        public async Task<long> UpdateOpInfo(ObjectId Id, string operatorId, string operatorName)
+        public async Task<long> UpdateOpInfo(ObjectId Id, string operatorId, string operatorName, string operatorType)
         {
             var query = Builders<Robot>.Filter.Eq(x => x.Id, Id);
             var update = Builders<Robot>.Update.Set(x => x.OperatorId, operatorId)
                                                                           .Set(x => x.OperatorName, operatorName)
+                                                                          .Set(x => x.OperatorType, operatorType)
                                                                           .Set(x => x.OperatorAt, DateTime.Now);
             var result = await Collection.UpdateOneAsync(query, update);
             return result.ModifiedCount;
