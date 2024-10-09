@@ -307,6 +307,36 @@
           }
         }
       }
+    },
+    "/ayo.tool.qiniuyun.upload.info.get": {
+      "post": {
+        "tags": [
+          "Tool"
+        ],
+        "summary": "获取七牛云上传相关信息",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetQiniuyunUploadInfoOutputBaseLibResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetQiniuyunUploadInfoOutputBaseLibResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetQiniuyunUploadInfoOutputBaseLibResponse"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -401,6 +431,52 @@
         },
         "additionalProperties": false,
         "description": "单个删除传入参数"
+      },
+      "GetQiniuyunUploadInfoOutput": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string",
+            "description": "上传令牌",
+            "nullable": true
+          },
+          "url": {
+            "type": "string",
+            "description": "返回地址",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "获取七牛云上传相关信息 返回信息"
+      },
+      "GetQiniuyunUploadInfoOutputBaseLibResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "fullMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestapm": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/GetQiniuyunUploadInfoOutput"
+          }
+        },
+        "additionalProperties": false
       },
       "RobotDto": {
         "type": "object",
