@@ -20,6 +20,7 @@ namespace Ayo.Core.Storage.Mongodb.Collect
         public new async Task<List<Robot>> GetAll()
         {
             var query = new BsonDocument() { { "operatorType", new BsonDocument() { { "$ne", "delete" } } } };
+
             //排序
             var sort = new BsonDocument()
             {
