@@ -296,6 +296,411 @@
         }
       }
     },
+    "/ayo.admin.manager.account.get": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "获取账户详情",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountDtoBaseLibResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountDtoBaseLibResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountDtoBaseLibResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ayo.admin.manager.account.getbytoken": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "获取账户详情",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountDtoBaseLibResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountDtoBaseLibResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountDtoBaseLibResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ayo.admin.manager.account.query": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "查询账户列表",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryAccountInput"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryAccountInput"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryAccountInput"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryAccountInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountDtoPagedResultDtoBaseLibResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountDtoPagedResultDtoBaseLibResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountDtoPagedResultDtoBaseLibResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ayo.admin.manager.account.login": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "账户登录",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountLoginInput"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountLoginInput"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountLoginInput"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountLoginInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringBaseLibResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringBaseLibResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringBaseLibResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ayo.admin.manager.account.insert": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "创建账户",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertAccountInput"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertAccountInput"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertAccountInput"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsertAccountInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLibResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLibResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLibResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ayo.admin.manager.account.update": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "编辑账户",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAccountInput"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAccountInput"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAccountInput"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAccountInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLibResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLibResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLibResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ayo.admin.manager.account.password.update": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "修改账户密码",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAccountPasswordInput"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAccountPasswordInput"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAccountPasswordInput"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAccountPasswordInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLibResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLibResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLibResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ayo.admin.manager.account.delete": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "删除账户",
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteInput"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteInput"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteInput"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLibResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLibResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseLibResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/swagger-gen": {
       "get": {
         "tags": [
@@ -341,6 +746,149 @@
   },
   "components": {
     "schemas": {
+      "AccountDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "账户Id",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "名称",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "description": "邮件",
+            "nullable": true
+          },
+          "mobilePhone": {
+            "type": "string",
+            "description": "手机号",
+            "nullable": true
+          },
+          "operatorType": {
+            "type": "string",
+            "description": "操作类型【create | update | delete】\r\nAyo.Core.GlobalConsts.KnowOperatorType",
+            "nullable": true
+          },
+          "operatorId": {
+            "type": "string",
+            "description": "操作人标识",
+            "nullable": true
+          },
+          "operatorName": {
+            "type": "string",
+            "description": "操作人",
+            "nullable": true
+          },
+          "operatorAt": {
+            "type": "string",
+            "description": "操作时间",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "后台账户数据传输模型"
+      },
+      "AccountDtoBaseLibResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "fullMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestapm": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/AccountDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AccountDtoPagedResultDto": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AccountDto"
+            },
+            "nullable": true
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AccountDtoPagedResultDtoBaseLibResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "fullMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestapm": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/AccountDtoPagedResultDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AccountLoginInput": {
+        "required": [
+          "password",
+          "userName"
+        ],
+        "type": "object",
+        "properties": {
+          "userName": {
+            "minLength": 1,
+            "type": "string",
+            "description": "用户名【用户名, 邮箱，手机号】"
+          },
+          "password": {
+            "minLength": 1,
+            "type": "string",
+            "description": "密码"
+          }
+        },
+        "additionalProperties": false,
+        "description": "账户登录传入参数"
+      },
       "BaseLibResponse": {
         "type": "object",
         "properties": {
@@ -369,7 +917,6 @@
       },
       "CreateRobotInput": {
         "required": [
-          "avatar",
           "description",
           "name",
           "operatorId",
@@ -396,11 +943,6 @@
             "minLength": 1,
             "type": "string",
             "description": "机器人描述"
-          },
-          "avatar": {
-            "minLength": 1,
-            "type": "string",
-            "description": "头像"
           }
         },
         "additionalProperties": false
@@ -478,6 +1020,77 @@
         },
         "additionalProperties": false
       },
+      "InsertAccountInput": {
+        "required": [
+          "email",
+          "mobilePhone",
+          "name",
+          "operatorId",
+          "operatorName",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "operatorId": {
+            "minLength": 1,
+            "type": "string",
+            "description": "操作人标识"
+          },
+          "operatorName": {
+            "minLength": 1,
+            "type": "string",
+            "description": "操作人"
+          },
+          "name": {
+            "minLength": 1,
+            "type": "string",
+            "description": "名称"
+          },
+          "email": {
+            "minLength": 1,
+            "type": "string",
+            "description": "邮箱"
+          },
+          "mobilePhone": {
+            "minLength": 1,
+            "type": "string",
+            "description": "手机号"
+          },
+          "password": {
+            "minLength": 1,
+            "type": "string",
+            "description": "密码"
+          }
+        },
+        "additionalProperties": false,
+        "description": "创建账户传入参数"
+      },
+      "QueryAccountInput": {
+        "type": "object",
+        "properties": {
+          "pageIndex": {
+            "maximum": 100000,
+            "minimum": 1,
+            "type": "integer",
+            "description": "当前页",
+            "format": "int32"
+          },
+          "pageSize": {
+            "maximum": 50,
+            "minimum": 1,
+            "type": "integer",
+            "description": "页大小",
+            "format": "int32"
+          },
+          "keyword": {
+            "type": "string",
+            "description": "关键字",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "查询账户传入参数"
+      },
       "RobotDto": {
         "type": "object",
         "properties": {
@@ -499,11 +1112,6 @@
           "description": {
             "type": "string",
             "description": "机器人描述",
-            "nullable": true
-          },
-          "avatar": {
-            "type": "string",
-            "description": "头像",
             "nullable": true
           },
           "isEnable": {
@@ -631,9 +1239,86 @@
         },
         "additionalProperties": false
       },
+      "UpdateAccountInput": {
+        "required": [
+          "email",
+          "id",
+          "mobilePhone",
+          "name",
+          "operatorId",
+          "operatorName"
+        ],
+        "type": "object",
+        "properties": {
+          "operatorId": {
+            "minLength": 1,
+            "type": "string",
+            "description": "操作人标识"
+          },
+          "operatorName": {
+            "minLength": 1,
+            "type": "string",
+            "description": "操作人"
+          },
+          "id": {
+            "minLength": 1,
+            "type": "string",
+            "description": "账户id"
+          },
+          "name": {
+            "minLength": 1,
+            "type": "string",
+            "description": "名称"
+          },
+          "email": {
+            "minLength": 1,
+            "type": "string",
+            "description": "邮箱"
+          },
+          "mobilePhone": {
+            "minLength": 1,
+            "type": "string",
+            "description": "手机号"
+          }
+        },
+        "additionalProperties": false,
+        "description": "编辑账户传入参数"
+      },
+      "UpdateAccountPasswordInput": {
+        "required": [
+          "id",
+          "operatorId",
+          "operatorName",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "operatorId": {
+            "minLength": 1,
+            "type": "string",
+            "description": "操作人标识"
+          },
+          "operatorName": {
+            "minLength": 1,
+            "type": "string",
+            "description": "操作人"
+          },
+          "id": {
+            "minLength": 1,
+            "type": "string",
+            "description": "账户id"
+          },
+          "password": {
+            "minLength": 1,
+            "type": "string",
+            "description": "密码"
+          }
+        },
+        "additionalProperties": false,
+        "description": "修改账户密码传入参数"
+      },
       "UpdateRobotInput": {
         "required": [
-          "avatar",
           "description",
           "id",
           "name",
@@ -666,11 +1351,6 @@
             "minLength": 1,
             "type": "string",
             "description": "机器人描述"
-          },
-          "avatar": {
-            "minLength": 1,
-            "type": "string",
-            "description": "头像"
           }
         },
         "additionalProperties": false

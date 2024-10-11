@@ -16,6 +16,7 @@ namespace Ayo.Core.Extensions
             services.AddSingleton(appOptions);
             services.AddSingleton(appOptions.StorageOptions);
             services.AddSingleton(appOptions.UploadOptions);
+            services.AddSingleton(appOptions.JwtOptions);
             return services;
         }
 
@@ -24,6 +25,7 @@ namespace Ayo.Core.Extensions
             iocManager.IocContainer.Register(Component.For<AppOptions>().Instance(appOptions));
             iocManager.IocContainer.Register(Component.For<StorageOptions>().Instance(appOptions.StorageOptions));
             iocManager.IocContainer.Register(Component.For<UploadOptions>().Instance(appOptions.UploadOptions));
+            iocManager.IocContainer.Register(Component.For<JwtOptions>().Instance(appOptions.JwtOptions));
             return iocManager;
         }
 

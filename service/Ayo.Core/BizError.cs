@@ -22,6 +22,9 @@
 
         // 业务错误从20000开始
 
+        public static BizError MANAGER_ACCOUNT_NAME_EXIST = new BizError(40000, "账户名称已存在");
+        public static BizError MANAGER_ACCOUNT_NOT_EXIST = new BizError(40001, "账户不存在");
+
         public BizError(int errCode, string errMessage)
         {
             ErrCode = errCode;

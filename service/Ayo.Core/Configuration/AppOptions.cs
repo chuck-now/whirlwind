@@ -36,6 +36,11 @@ namespace Ayo.Core.Configuration
         public UploadOptions UploadOptions { get; internal set; }
 
         /// <summary>
+        ///  jwt token配置
+        /// </summary>
+        public JwtOptions JwtOptions { get; internal set; }
+
+        /// <summary>
         /// 初始化读取
         /// </summary>
         /// <param name="config"></param>
@@ -46,7 +51,8 @@ namespace Ayo.Core.Configuration
             {
                 Name = config.GetValue<string>(nameof(Name)),
                 StorageOptions = StorageOptions.ReadFromConfiguration(config),
-                UploadOptions = UploadOptions.ReadFromConfiguration(config)
+                UploadOptions = UploadOptions.ReadFromConfiguration(config),
+                JwtOptions = JwtOptions.ReadFromConfiguration(config)
             };
             return options;
         }
