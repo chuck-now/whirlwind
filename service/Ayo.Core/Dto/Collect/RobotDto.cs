@@ -25,11 +25,6 @@ namespace Ayo.Core.Dto.Collect
         public string Description { get; set; }
 
         /// <summary>
-        /// 头像
-        /// </summary>
-        public string Avatar { get; set; }
-
-        /// <summary>
         /// 是否启用【Y | N】
         /// <see cref="KnowSwitch"/>
         /// </summary>

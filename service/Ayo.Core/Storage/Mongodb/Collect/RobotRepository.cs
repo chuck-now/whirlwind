@@ -32,8 +32,7 @@ namespace Ayo.Core.Storage.Mongodb.Collect
         {
             var query = Builders<Robot>.Filter.Eq(x => x.Id, robot.Id);
             var update = Builders<Robot>.Update.Set(x => x.Name, robot.Name)
-                                                                           .Set(x => x.Description, robot.Description)
-                                                                           .Set(x => x.Avatar, robot.Avatar);
+                                                                           .Set(x => x.Description, robot.Description);
             var result = await Collection.UpdateOneAsync(query, update);
             return result.ModifiedCount;
         }

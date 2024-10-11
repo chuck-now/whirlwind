@@ -21,11 +21,5 @@ namespace Ayo.Core.Dto.Collect.Admin
         /// </summary>
         [Required]
         public string Description { get; set; }
-
-        /// <summary>
-        /// 头像
-        /// </summary>
-        [Required]
-        public string Avatar { get; set; }
     }
 }

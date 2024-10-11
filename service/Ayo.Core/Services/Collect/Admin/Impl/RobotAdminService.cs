@@ -51,7 +51,6 @@ namespace Ayo.Core.Services.Collect.Admin.Impl
                 Code = $"ayo_{new Random().Next(1000, 9999)}",
                 Name = input.Name,
                 Description = input.Description,
-                Avatar = input.Avatar,
                 OperatorId = input.OperatorId,
                 OperatorName = input.OperatorName,
                 OperatorType = KnowOperatorType.CREATE
@@ -77,7 +76,6 @@ namespace Ayo.Core.Services.Collect.Admin.Impl
 
             robot.Name = input.Name;
             robot.Description = input.Description;
-            robot.Avatar = input.Avatar;
             var count = await _robotRepository.UpdateInfo(robot);
             if (count > 0)
             {

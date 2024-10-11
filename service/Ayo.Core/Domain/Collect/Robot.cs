@@ -12,7 +12,6 @@ namespace Ayo.Core.Domain.Collect
             Code = "";
             Name = "";
             Description = "";
-            Avatar = "";
             IsEnable = KnowSwitch.N;
             TaskCount = 0;
         }
@@ -31,11 +30,6 @@ namespace Ayo.Core.Domain.Collect
         /// 机器人描述
         /// </summary>
         public string Description { get; set; }
-
-        /// <summary>
-        /// 头像
-        /// </summary>
-        public string Avatar { get; set; }
 
         /// <summary>
         /// 是否启用【Y | N】
