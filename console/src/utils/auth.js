@@ -1,6 +1,6 @@
 import Cookies from 'js-cookie'
 
-const TokenKey = 'bee-token'
+const TokenKey = 'ayo-token'
 
 export function getToken() {
   return Cookies.get(TokenKey, { domain: process.env.VUE_APP_COOKIE_DOMAIN })

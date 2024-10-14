@@ -11,7 +11,7 @@
       <div class="title-container">
         <h3 class="title">
           <img src="@/assets/avatar.gif" class="login-logo"> 登录
-          <span>Bee</span>
+          <span>哎呦</span>
         </h3>
       </div>
 

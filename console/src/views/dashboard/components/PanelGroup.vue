@@ -57,7 +57,7 @@
 
 <script>
 
-import { queryStat } from '@/api/bee/stat'
+import { queryStat } from '@/api/ayo/stat'
 import CountTo from 'vue-count-to'
 
 export default {

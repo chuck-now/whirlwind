@@ -24,7 +24,7 @@ export default {
   },
   data() {
     return {
-      title: 'Bee',
+      title: 'Ayo',
       logo: 'logo'
     }
   }

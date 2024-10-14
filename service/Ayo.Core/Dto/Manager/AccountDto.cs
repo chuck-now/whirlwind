@@ -28,6 +28,12 @@ namespace Ayo.Core.Dto.Manager
         public string MobilePhone { get; set; }
 
         /// <summary>
+        /// 角色
+        /// <see cref="KnowAccountRole"/>
+        /// </summary>
+        public string[] Roles { get; set; }
+
+        /// <summary>
         /// 操作类型【create | update | delete】
         /// <see cref="KnowOperatorType"/>
         /// </summary>

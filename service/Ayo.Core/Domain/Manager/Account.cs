@@ -1,4 +1,6 @@
-﻿namespace Ayo.Core.Domain.Manager
+﻿using static Ayo.Core.GlobalConsts;
+
+namespace Ayo.Core.Domain.Manager
 {
     /// <summary>
     /// 后台账号
@@ -32,5 +34,11 @@
         /// 密码
         /// </summary>
         public string Password { get; set; }
+
+        /// <summary>
+        /// 角色
+        /// <see cref="KnowAccountRole"/>
+        /// </summary>
+        public string[] Roles { get; set; }
     }
 }

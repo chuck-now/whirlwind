@@ -41,5 +41,26 @@
             /// </summary>
             public const string DELETE = "delete";
         }
+
+        /// <summary>
+        /// 账号角色 【admin = 管理员 general = 普通 unknown=未知】
+        /// </summary>
+        public static class KnowAccountRole
+        {
+            /// <summary>
+            /// 管理员
+            /// </summary>
+            public const string Admin = "admin";
+
+            /// <summary>
+            /// 普通
+            /// </summary>
+            public const string General = "general";
+
+            /// <summary>
+            /// 未知
+            /// </summary>
+            public const string Unknown = "unknown";
+        }
     }
 }

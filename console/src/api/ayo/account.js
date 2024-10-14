@@ -5,7 +5,7 @@ import request from '@/utils/request'
  */
 export function getAccount(data) {
     return request({
-        url: `/bee.admin.manager.account.get?id=` + data,
+        url: `/ayo.admin.manager.account.get?id=` + data,
         method: 'post'
     })
 }
@@ -15,7 +15,7 @@ export function getAccount(data) {
  */
 export function queryAccount(data) {
     return request({
-        url: `/bee.admin.manager.account.query`,
+        url: `/ayo.admin.manager.account.query`,
         method: 'post',
         data
     })
@@ -26,7 +26,7 @@ export function queryAccount(data) {
  */
 export function insertAccount(data) {
     return request({
-        url: `/bee.admin.manager.account.insert`,
+        url: `/ayo.admin.manager.account.insert`,
         method: 'post',
         data
     })
@@ -38,7 +38,7 @@ export function insertAccount(data) {
  */
 export function updateAccount(data) {
     return request({
-        url: `/bee.admin.manager.account.update`,
+        url: `/ayo.admin.manager.account.update`,
         method: 'post',
         data
     })
@@ -50,7 +50,7 @@ export function updateAccount(data) {
 */
 export function updateAccountPassword(data) {
     return request({
-        url: `/bee.admin.manager.account.password.update`,
+        url: `/ayo.admin.manager.account.password.update`,
         method: 'post',
         data
     })
@@ -62,7 +62,7 @@ export function updateAccountPassword(data) {
  */
 export function deleteAccount(data) {
     return request({
-        url: `/bee.admin.manager.account.delete`,
+        url: `/ayo.admin.manager.account.delete`,
         method: 'post',
         data
     })

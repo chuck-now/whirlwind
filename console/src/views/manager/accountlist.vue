@@ -42,16 +42,16 @@
           </div>
         </template>
       </el-table-column>
-      <el-table-column align="center" label="创建时间">
+      <el-table-column align="center" label="操作信息">
         <template slot-scope="{ row }">
-          <span>{{ row.createdAt }}</span>
+          <span>操作人：{{ row.operatorName }} <br> 操作时间：{{ row.operatorAt }}  <br> 操作类型：{{ row.operatorType }} </span>
         </template>
       </el-table-column>
       <el-table-column align="center" label="状态">
         <template slot-scope="{ row }">
           <span>
             <el-tag :type="row.tagType">
-              {{ row.isDeleted === true ? "删除" : "显示" }}
+              {{ row.operatorType === "delete" ? "删除" : "显示" }}
             </el-tag>
           </span>
         </template>
@@ -64,14 +64,13 @@
             :disabled="row.roles.includes('admin') ? true :false"
             @click="openEditForm(row)"
           ></el-button>
-          <el-popconfirm title="确定删除吗？" @onConfirm="deleteForm(row.id)">
-            <el-button
-              slot="reference"
-              icon="el-icon-delete"
-              circle
-              :disabled="row.roles.includes('admin') ? true :false"
-            ></el-button>
-          </el-popconfirm>
+          <el-button
+            slot="reference"
+            icon="el-icon-delete"
+            circle
+            :disabled="row.roles.includes('admin') ? true :false"
+            @click="deleteForm(row.id)"
+          ></el-button>
           <el-button
             :disabled="row.roles.includes('admin') ? true :false"
             size="small"
@@ -197,13 +196,14 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import {
   queryAccount,
   insertAccount,
   updateAccount,
   updateAccountPassword,
   deleteAccount
-} from "@/api/bee/account";
+} from "@/api/ayo/account";
 import Pagination from "@/components/Pagination";
 import { md5 } from "@/utils/md5";
 
@@ -224,19 +224,25 @@ export default {
         name: '',
         email: '',
         mobilePhone: '',
-        password: ''
+        password: '',
+        operatorId: this.operatorId,
+        operatorName: this.operatorName
       },
       createDialogVisible: false,
       updateInput: {
         id: '',
         name: '',
         email: '',
-        mobilePhone: ''
+        mobilePhone: '',
+        operatorId: this.operatorId,
+        operatorName: this.operatorName
       },
       updateDialogVisible: false,
       updatePasswordInput: {
         id: '',
-        password: ''
+        password: '',
+        operatorId: this.operatorId,
+        operatorName: this.operatorName
       },
       updatePasswordDialogVisible: false,
       rules: {
@@ -272,6 +278,12 @@ export default {
       }
     };
   },
+  computed: {
+    ...mapGetters([
+      'operatorId',
+      'operatorName'
+    ])
+  },
   async mounted() {
     await this.search();
   },
@@ -284,7 +296,7 @@ export default {
         this.list = res.result.items == null ? [] : res.result.items
         this.list.forEach((element) => {
           // 显示tag类型
-          if (element.isDeleted === true) {
+          if (element.operatorType === "delete") {
             element.tagType = "danger"
           } else {
             element.tagType = "success"
@@ -386,11 +398,14 @@ export default {
       }
     },
     async deleteForm(id) {
+      console.log(id)
       if (id.length === 0) {
         return;
       }
       const deleteinput = {
-        id: id
+        id: id,
+        operatorId: this.operatorId,
+        operatorName: this.operatorName
       };
       const res = await deleteAccount(deleteinput);
       if (res.isSuccess === true) {

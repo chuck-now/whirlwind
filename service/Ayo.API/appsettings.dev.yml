@@ -14,3 +14,8 @@ Upload:
    QiNIuSecretKey: 'UMvaiC7Izo3AAXYjnpF8aFYfx4sHDtOpRaC761Rp'
    QiNIuScope: 'dukesimage'
    QiNIuOutUrl: 'http://img.dukesimage.cn'
+
+Jwt:
+   Audience: 'ayo'
+   Issuer: 'duke'
+   SigningKey: 'fc93cb07e1ad92898527100e58a1cf1d1e7f65e9a266a6f87f3c84fcsadcasdcsdvdsfvadvdfvbdfvads'

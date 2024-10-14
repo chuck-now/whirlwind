@@ -6,6 +6,8 @@ const getDefaultState = () => {
   return {
     token: getToken(),
     name: '',
+    operatorId: '',
+    operatorName: '',
     avatar: '',
     roles: []
   }
@@ -22,6 +24,12 @@ const mutations = {
   },
   SET_NAME: (state, name) => {
     state.name = name
+  },
+  SET_OPERATORID: (state, operatorId) => {
+    state.operatorId = operatorId
+  },
+  SET_OPERATORNAME: (state, operatorName) => {
+    state.operatorName = operatorName
   },
   SET_AVATAR: (state, avatar) => {
     state.avatar = avatar
@@ -61,10 +69,12 @@ const actions = {
             reject('验证失败, 请重新登录.')
           }
 
-          const { roles, name, avatar } = result
+          const { roles, name, avatar, operatorId, operatorName } = result
 
           commit('SET_ROLES', roles)
           commit('SET_NAME', name)
+          commit('SET_OPERATORID', operatorId)
+          commit('SET_OPERATORNAME', operatorName)
           commit('SET_AVATAR', avatar)
           resolve(result)
         })
@@ -81,7 +91,6 @@ const actions = {
       resetRouter()
       commit('SET_TOKEN', '')
       commit('SET_ROLES', [])
-
       dispatch('tagsView/delAllViews', null, { root: true })
 
       resolve()

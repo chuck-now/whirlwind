@@ -69,6 +69,7 @@ namespace Ayo.Core.Services.Manager.Admin.Impl
             {
                 throw new BizException(BizError.MANAGER_ACCOUNT_NAME_EXIST);
             }
+            var roles = new List<string>() { KnowAccountRole.General };
 
             await _accountRepository.InsertAsync(new Account()
             {
@@ -76,6 +77,7 @@ namespace Ayo.Core.Services.Manager.Admin.Impl
                 Email = input.Email,
                 MobilePhone = input.MobilePhone,
                 Password = input.Password,
+                Roles = roles.ToArray(),
                 OperatorId = input.OperatorId,
                 OperatorName = input.OperatorName,
                 OperatorType = KnowOperatorType.CREATE
