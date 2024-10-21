@@ -66,7 +66,7 @@ export const constantRoutes = [{
         component: () => import('@/views/collect/robotlist'),
         meta: {
           title: '机器人列表',
-          icon: 'list'
+          icon: 'people'
         }
       }
     ]
