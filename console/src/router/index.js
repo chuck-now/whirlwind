@@ -52,6 +52,25 @@ export const constantRoutes = [{
       }
     ]
   },
+  {
+    path: '/collect',
+    component: Layout,
+    redirect: '/collect/list',
+    meta: {
+      title: '机器人管理', icon: 'robot'
+    },
+    children: [
+      {
+        path: 'robotlist',
+        name: 'RobotList',
+        component: () => import('@/views/collect/robotlist'),
+        meta: {
+          title: '机器人列表',
+          icon: 'list'
+        }
+      }
+    ]
+  },
   // {
   //   path: '/job',
   //   component: Layout,
